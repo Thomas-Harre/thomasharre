@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thomas Harré — Barrister | Researcher</title>
+<meta name="description" content="Dr Thomas Harré is a criminal defence barrister and legal researcher based in Christchurch, New Zealand.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --stone: #f5f2ed;
+    --ink: #1a1a1a;
+    --mid: #6b6460;
+    --rule: #c8c1b8;
+    --accent: #3d3530;
+    --white: #fff;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Source Sans 3', -apple-system, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    color: var(--ink);
+    background: var(--white);
+    line-height: 1.6;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--stone);
+    border-bottom: 1px solid var(--rule);
+    padding: 2.5rem 2rem 2rem;
+    text-align: center;
+  }
+
+  header h1 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+  }
+
+  header .quals {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-top: 0.3rem;
+  }
+
+  header .tagline {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--accent);
+    margin-top: 0.75rem;
+  }
+
+  /* contact bar */
+  .contact-bar {
+    background: var(--ink);
+    color: var(--stone);
+    text-align: center;
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+  .contact-bar a {
+    color: var(--stone);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(245,242,237,0.3);
+  }
+  .contact-bar a:hover { border-bottom-color: var(--stone); }
+  .contact-bar .sep { margin: 0 0.75rem; opacity: 0.4; }
+
+  /* ── NAV ── */
+  nav {
+    text-align: center;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid var(--rule);
+    background: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  nav a {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-decoration: none;
+    margin: 0 1rem;
+    padding-bottom: 0.15rem;
+    transition: color 0.2s, border-color 0.2s;
+    border-bottom: 1.5px solid transparent;
+  }
+  nav a:hover {
+    color: var(--ink);
+    border-bottom-color: var(--ink);
+  }
+
+  /* ── SECTIONS ── */
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  section {
+    padding: 3rem 0;
+  }
+
+  section + section {
+    border-top: 1px solid var(--rule);
+  }
+
+  section h2 {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+    color: var(--ink);
+  }
+
+  section p {
+    font-size: 0.95rem;
+    color: var(--accent);
+    margin-bottom: 0.9rem;
+    line-height: 1.7;
+  }
+
+  section p:last-child { margin-bottom: 0; }
+
+  /* case highlights */
+  .case-list {
+    margin: 1rem 0;
+    padding-left: 0;
+    list-style: none;
+  }
+  .case-list li {
+    font-size: 0.9rem;
+    color: var(--accent);
+    padding: 0.35rem 0;
+    padding-left: 1rem;
+    position: relative;
+  }
+  .case-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--rule);
+  }
+
+  /* publications */
+  .pub {
+    margin-bottom: 1.25rem;
+  }
+  .pub .pub-title {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .pub .pub-venue {
+    font-size: 0.82rem;
+    color: var(--mid);
+    font-style: italic;
+    margin-top: 0.1rem;
+  }
+  .pub a {
+    font-size: 0.82rem;
+    color: var(--mid);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+  }
+  .pub a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
+  /* tools */
+  .tool-card {
+    background: var(--stone);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid var(--rule);
+  }
+  .tool-card h3 {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  .tool-card p {
+    font-size: 0.88rem;
+    margin-bottom: 0.4rem;
+  }
+  .tool-card a {
+    font-size: 0.82rem;
+    color: var(--mid);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+  }
+  .tool-card a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
+  /* roles list */
+  .roles {
+    list-style: none;
+    padding: 0;
+  }
+  .roles li {
+    font-size: 0.9rem;
+    color: var(--accent);
+    padding: 0.3rem 0;
+    padding-left: 1rem;
+    position: relative;
+  }
+  .roles li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--rule);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.78rem;
+    color: var(--mid);
+    font-weight: 300;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    header { padding: 2rem 1.5rem 1.5rem; }
+    .container { padding: 0 1.5rem; }
+    nav a { margin: 0 0.5rem; font-size: 0.72rem; }
+    section { padding: 2.25rem 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Dr Thomas Harré</h1>
+  <div class="quals">BA · LLB · LLM (Dist) · PhD</div>
+  <div class="tagline">Barrister · Researcher · Lecturer</div>
+</header>
+
+<div class="contact-bar">
+  <a href="tel:+64273288067">+64 27 328 8067</a>
+  <span class="sep">|</span>
+  <a href="mailto:thomas@thomasharre.com">thomas@thomasharre.com</a>
+  <span class="sep">|</span>
+  Christchurch, New Zealand
+</div>
+
+<nav>
+  <a href="#practice">Practice</a>
+  <a href="#research">Research</a>
+  <a href="#tools">Tools</a>
+  <a href="#teaching">Teaching</a>
+  <a href="#about">About</a>
+</nav>
+
+<main class="container">
+
+  <!-- ════ PRACTICE ════ -->
+  <section id="practice">
+    <h2>Practice</h2>
+    <p>I am a criminal defence barrister practising in Christchurch. I represent people facing serious criminal charges at trial and on appeal, including charges of murder, sexual offending, drug offending, and serious violence. I accept both private instructions and legal aid.</p>
+    <p>I also practise in refugee and immigration law, and have particular experience in cases involving human trafficking and forced labour.</p>
+    <p>Recent trial and appeal work includes:</p>
+    <ul class="case-list">
+      <li>Defence counsel in a murder trial (<em>R v Boden</em> [2025] NZHC 4040)</li>
+      <li>Acquittal at trial on a charge of attempted murder (<em>R v Haddon</em>, 2024)</li>
+      <li>Serious drug, sexual violence, and aggravated robbery matters</li>
+      <li>Extended supervision order proceedings</li>
+      <li>Refugee status determination</li>
+    </ul>
+  </section>
+
+  <!-- ════ RESEARCH ════ -->
+  <section id="research">
+    <h2>Research</h2>
+    <p>My academic research sits across two areas: transnational criminal law — particularly human trafficking and forced labour at sea — and access to justice, including the use of technology to improve legal outcomes for unrepresented and under-represented people.</p>
+
+    <h3 style="font-family: var(--serif); font-size: 1.1rem; font-weight: 500; margin: 1.5rem 0 0.75rem; color: var(--mid);">Selected publications</h3>
+
+    <div class="pub">
+      <div class="pub-title">Human trafficking as a fisheries crime? An application of the concept to the New Zealand context</div>
+      <div class="pub-venue">Marine Policy, 2019</div>
+      <a href="https://www.sciencedirect.com/science/article/abs/pii/S0308597X18309473">View</a>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">"Asian Values" and the "ASEAN Way" in the case of Human Trafficking of Fishermen</div>
+      <div class="pub-venue">Paper presented at ASLI 2017, Manila</div>
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2977043">View</a>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">Is the Law an Ass When It Comes to Mules? How Indonesia Can Lead a New Global Approach to Treating Drug Traffickers as Human Trafficked Victims</div>
+      <div class="pub-venue">Asian Journal of International Law, 2016</div>
+      <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3445351">View</a>
+    </div>
+  </section>
+
+  <!-- ════ TOOLS ════ -->
+  <section id="tools">
+    <h2>Access to Justice Tools</h2>
+    <p>I build open-source software tools designed to improve access to justice in the criminal legal system. Each tool is accompanied by a short working paper explaining the problem it addresses and the design choices involved.</p>
+    <p>Tools and papers are published on <a href="https://github.com/thomasharre" style="color: var(--mid); border-bottom: 1px solid var(--rule); text-decoration: none;">GitHub</a>.</p>
+
+    <!-- placeholder tool cards — replace with real ones -->
+    <!--
+    <div class="tool-card">
+      <h3>Tool Name</h3>
+      <p>Brief description of the access-to-justice problem this tool addresses.</p>
+      <a href="#">GitHub</a> · <a href="#">Working paper</a>
+    </div>
+    -->
+  </section>
+
+  <!-- ════ TEACHING ════ -->
+  <section id="teaching">
+    <h2>Teaching</h2>
+    <p>I teach criminal procedure (LAWS380) at the University of Canterbury, Te Whare Wānanga o Waitaha. The course covers the criminal process from investigation through to sentencing and appeal, with particular attention to the rights of accused persons under the New Zealand Bill of Rights Act 1990.</p>
+  </section>
+
+  <!-- ════ ABOUT ════ -->
+  <section id="about">
+    <h2>About</h2>
+    <p>I hold a PhD in law from the University of Melbourne, where my research focused on human trafficking in the Southeast Asian fishing industry. Before commencing practice as a barrister I worked in policy and research roles relating to human rights and transnational crime.</p>
+
+    <ul class="roles">
+      <li>Board member, Community Law Centres o Aotearoa</li>
+      <li>Member, New Zealand Law Society Human Rights and Privacy Law Reform Committee</li>
+      <li>Former consultant to the United Nations on forced labour and trafficking</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  &copy; Thomas Harré 2026 &ensp;·&ensp; Christchurch, New Zealand
+</footer>
+
+</body>
+</html>
